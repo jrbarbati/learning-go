@@ -30,13 +30,13 @@ func process() {
 		select {
 		case num1, ok := <-ch1:
 			if !ok {
-				ch1 = nil
+				ch1 = nil // Effectively turns off this select case
 				continue
 			}
 			fmt.Println(num1)
 		case num2, ok := <-ch2:
 			if !ok {
-				ch2 = nil
+				ch2 = nil // Effectively turns off this select case
 				continue
 			}
 			fmt.Println(num2)
