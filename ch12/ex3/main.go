@@ -11,12 +11,12 @@ const (
 )
 
 var (
-	sqrtsMap = sync.OnceValue(buildMap)
+	sqrts = sync.OnceValue(buildMap)
 )
 
 func main() {
 	for i := 0; i < size; i += 1000 {
-		fmt.Println("sqrt of", i, "->", sqrtsMap()[i])
+		fmt.Println("sqrt of", i, "->", sqrts()[i])
 	}
 }
 
